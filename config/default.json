@@ -1,0 +1,12 @@
+{
+  "name": "Tower to Teambition",
+  "debug": true,
+  "mongo": {
+    "url": "your mongo path",
+    "auth_db": "admin",
+    "use_cert": false,
+    "ca_path": "",
+    "client_crt_path": "",
+    "client_key_path": ""
+  }
+}
