@@ -1,6 +1,6 @@
 # t2t
 
-## Conver tower data to teambiton's shape
+Convert tower's data to teambiton's shape
 
 ## Usage
 
