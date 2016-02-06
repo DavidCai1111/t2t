@@ -18,16 +18,12 @@ export async function create (user, parsedProjectArray: Array<IParsedInfo.IParse
   await Promise.all(parsedProjectArray.map(async function (parsedProject) {
     let createdProjectInfo = await _createProject(user, parsedProject.projectInfo)
 
-    try {
-      await Promise.all([
-        _createTasks(user, createdProjectInfo, parsedProject.tasksInfo),
-        _createPosts(user, createdProjectInfo, parsedProject.postsInfo),
-        _createEvents(user, createdProjectInfo, parsedProject.eventsInfo),
-        _createCollections(user, createdProjectInfo, parsedProject.collectionsInfo)
-      ])
-    } catch (err) {
-      console.error(error(err))
-    }
+    await Promise.all([
+      _createTasks(user, createdProjectInfo, parsedProject.tasksInfo),
+      _createPosts(user, createdProjectInfo, parsedProject.postsInfo),
+      _createEvents(user, createdProjectInfo, parsedProject.eventsInfo),
+      _createCollections(user, createdProjectInfo, parsedProject.collectionsInfo)
+    ])
   }))
 }
 

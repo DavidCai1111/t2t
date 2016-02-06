@@ -62,7 +62,6 @@ function _parseTasks (taskFolderPath: string): Array<IParsedInfo.ITasksInfo> {
 
       if (commentPath && commentPath.trim() !== '') {
         let commentHtml = fs.readFileSync(join(taskFolderPath, commentPath)).toString('utf8')
-        console.error(commentHtml)
         let commentSelector = cheerio.load(commentHtml)
         commentSelector('.comment').each(function (i, elem) {
           comment += `${cheerio('p b', $(this).html()).text().trim()} ${cheerio('.time', $(this).html()).text().trim()}\n${cheerio('.editor-style', $(this).html()).text().trim()}\n\n`
